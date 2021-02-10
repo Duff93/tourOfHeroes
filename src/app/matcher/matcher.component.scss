@@ -1,0 +1,44 @@
+::ng-deep .p-card .p-card-title {
+    font-weight: 400;
+    color: rgb(145, 145, 145);
+}
+
+button {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(59, 139, 204);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.p-button:enabled:hover {
+    background: rgb(30 108 225 / 92%);
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+}
+
+.p-button {
+    vertical-align: baseline;
+    margin: 1rem;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #919191;
+}
+
+.div-center {
+    display: table;
+    margin: 0 auto;
+}
+
+::ng-deep .p-dropdown {
+    width: 205px;
+}

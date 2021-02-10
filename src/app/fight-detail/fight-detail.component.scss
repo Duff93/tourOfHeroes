@@ -1,0 +1,43 @@
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background-color:rgb(59, 139, 204);
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background-color: #bdd4f6;
+}
+
+.span-details-fight {
+    color: #919191;
+    margin: 0.5rem;
+}
+
+.img-detail {
+    height: auto;
+    width: auto;
+    max-height: 6rem;
+    max-width: 7.5rem;
+    display: block;
+}
+
+::ng-deep .p-input-icon-left {
+    display: block;
+    margin: 0.5rem;
+}
+
+.span-radio-button {
+    margin: 1rem;
+    display: inline-block;
+}
+
+.label-radio-button {
+    margin-left: 0.5rem;
+}
+
+.div-select-mode {
+    text-align: center;
+}
+
+.div-number-fights {
+    text-align: center;
+    margin: 1rem;
+}

@@ -1,0 +1,12 @@
+<p-card class="p-card-class">
+    <h2>Select Hero</h2>
+    <div class="div-center">
+        <p-dropdown [options]="heroes" (onChange)="onSelectedHeroChanged($event)" placeholder="Select a hero" optionLabel="name"></p-dropdown>
+        <button pButton type="button" label="Find enemy" (click)="findEnemy()" [disabled]="!selectedHero"></button>
+        <input *ngIf="numbersOfMatches == 1 && enemyHero.length == 0" type="text" pInputText placeholder="enemy...">
+        <input *ngIf="enemyHero.length == 1" type="text" pInputText [(ngModel)]="enemyHero[0].name">
+        <ul *ngIf="numbersOfMatches > 1">
+            <li *ngFor="let enemies of enemyHero">{{enemies.name}}</li>
+        </ul>
+    </div>
+</p-card>

@@ -1,0 +1,69 @@
+<div *ngIf="hero">
+  <p-card class="p-card-class" header="{{hero.name | uppercase}} Details">
+    <div class="p-grid">
+      <div class="p-col">
+        <div class="box">
+          <label id="label-id">id</label>
+          <input class="input-detail-hero" [disabled]="true" type="text" pInputText [(ngModel)]="hero.id" />
+        </div>
+      </div>
+      <div class="p-col">
+        <div class="box">
+          <label>attack</label>
+          <input class="input-detail-hero" type="text" pInputText [formControl]="valueOfAttack" />
+        </div>
+      </div>
+      <div class="p-col">
+        <div class="box">
+          <label id="label-attackTot">attackTot</label>
+          <input class="input-detail-hero" [disabled]="true" type="text" pInputText [(ngModel)]="attackTot" />
+        </div>
+      </div>
+      <div class="p-col">
+        <div class="box">
+          <label>health</label>
+          <input class="input-detail-hero" type="text" pInputText [(ngModel)]="hero.health" />
+        </div>
+      </div>
+      <div class="p-col">
+        <div class="box">
+          <label>win</label>
+          <input class="input-detail-hero" type="text" pInputText [(ngModel)]="hero.win" />
+        </div>
+      </div>
+      <div class="p-col">
+        <div class="box">
+          <label>lost</label>
+          <input class="input-detail-hero" type="text" pInputText [(ngModel)]="hero.lost" />
+        </div>
+      </div>
+    </div>
+    <div class="div-buttons">
+      <button pButton type="button" label="Save" class="p-button-raised" (click)="save()"></button>
+      <button pButton type="button" label="Go back" class="p-button-raised" (click)="goBack()"></button>
+    </div>
+  </p-card>
+  
+  <p-card class="p-card-class" id="card-list" header="List of Gadgets">
+    <div class="card">
+      <app-gadget-search (gadgetAdded)="addGadgets($event)"></app-gadget-search>
+      <p-table [value]="gadgets" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Bonus</th>
+            <th>Delete</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-gadget>
+          <tr>
+            <td>{{gadget.name}}</td>
+            <td>{{gadget.bonus}}</td>
+            <td><button pButton class="delete" label="Delete" (click)="delete(gadget)"></button></td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </p-card>
+</div>

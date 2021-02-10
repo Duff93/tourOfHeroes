@@ -1,0 +1,56 @@
+<p-card id="fight-card">
+    <h2>FIGHT!</h2>
+    <div class="div-fight">
+        <div class="div-input-switch">
+            <p-inputSwitch [disabled]="!enemyHero" (onChange)="fight()"></p-inputSwitch><span class="span-details-fight">Details fight</span>
+            <button *ngIf="endProcessingBattles" pButton type="button" label="Start fight" (click)="startSingleFight()"></button>
+            <button *ngIf="!endProcessingBattles" pButton type="button" label="Start fight" [disabled]=true></button>
+        </div>
+        <p-splitter *ngIf="checked" styleClass="p-mb-1">
+            <ng-template>
+                <div class="p-col p-d-flex p-ai-center p-jc-center">
+                    <span class="div-details-member-fight">
+                        <span>
+                            <img class="img-detail" [src]="selectedHero.img"/>
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-id-card"></i>
+                            <input type="text" pInputText [(ngModel)]="selectedHero.name">         
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-heart"></i>
+                            <input type="text" pInputText [(ngModel)]="selectedHero.health">         
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-caret-up"></i>
+                            <input type="text" pInputText [(ngModel)]="attackTotHero">         
+                        </span>
+                    </span>
+                </div>
+            </ng-template>
+            <ng-template>
+                <div class="p-col p-d-flex p-ai-center p-jc-center">
+                    <span class="div-details-member-fight">
+                        <span>
+                            <img class="img-detail" [src]="currentEnemy.img"/>
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-id-card"></i>
+                            <input type="text" pInputText [(ngModel)]="currentEnemy.name">         
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-heart"></i>
+                            <input type="text" pInputText [(ngModel)]="currentEnemy.health">         
+                        </span>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-caret-up"></i>
+                            <input type="text" pInputText [(ngModel)]="attackTotEnemy">         
+                        </span>
+                    </span>
+                </div>
+            </ng-template>
+        </p-splitter>
+    </div>
+</p-card>
+
+<p-toast position="bottom-right"></p-toast>

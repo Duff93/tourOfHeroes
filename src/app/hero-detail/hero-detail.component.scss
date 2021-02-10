@@ -1,0 +1,63 @@
+label {
+    display: inline-block;
+    width: 3em;
+    margin: .5em 0;
+    color: #565454;
+    font-weight: normal;
+  }
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  button {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(59, 139, 204);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0a37b3;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
+
+  .input-detail-hero {
+    margin: 1.5em;
+  }
+
+  .p-button-raised {
+    float: right;
+    margin-right: 1.2em;
+  }
+
+  .p-grid {
+    display: flex;
+  }
+
+  #label-id {
+    padding-left: 2em;
+  }
+
+  #label-attackTot {
+    margin-right: 1.4em;
+  }
+
+  .div-buttons {
+    height: 2.6em;
+  }
+
+  .p-button:enabled:hover {
+    background: rgb(30 108 225 / 92%);
+  }
+
+  ::ng-deep .p-card .p-card-title {
+    font-weight: 400;
+    color: rgb(145, 145, 145);
+}

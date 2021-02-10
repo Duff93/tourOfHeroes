@@ -1,0 +1,7 @@
+<p-card class="p-card-class">
+    <h2>Insert number of matches</h2>
+    <input class="input-matches" type="text" pInputText [(ngModel)]="numbersOfMatches" placeholder="matches...">
+</p-card>
+<app-matcher *ngIf="numbersOfMatches" [numbersOfMatches]="numbersOfMatches" (heroSelected)="onChangeHero($event)" (enemySelected)="onBlurEnemy($event)"></app-matcher>
+
+<app-fight-detail *ngIf="numbersOfMatches" [numbersOfMatches]="numbersOfMatches" [selectedHero]="selectedHero" [enemyHero]="enemyHero"></app-fight-detail>

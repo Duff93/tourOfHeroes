@@ -1,0 +1,30 @@
+<div id="search-component">
+    <!-- <h4><label for="search-box">Add Gadget</label></h4>
+
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+    <ul class="search-result">
+        <li *ngFor="let gadget of gadgets$ | async">
+            <a routerLink="/detail/{{gadget.id}}">
+                {{gadget.name}}
+            </a>
+            <button (click)="onGadgetClicked(gadget.id); searchBox.value=''">+</button>
+        </li>
+    </ul> -->
+
+    <p-dropdown [options]="gadgets" [(ngModel)]="selectedGadget" optionLabel="name" [filter]="true" filterBy="name"
+        [showClear]="true" placeholder="Select a Gadget" #dropDown>
+        <ng-template pTemplate="selectedItem">
+            <div class="country-item country-item-value" *ngIf="selectedGadget">
+                <div>{{selectedGadget.name}}</div>
+            </div>
+        </ng-template>
+        <ng-template let-gadget pTemplate="item">
+            <div class="country-item">
+                <div>{{gadget.name}}</div>
+            </div>
+        </ng-template>
+    </p-dropdown>
+
+    <button pButton type="button" label="Add Gadget" class="p-button-raised" (click)="onGadgetClicked(selectedGadget); clearDropdown()"></button>
+</div>

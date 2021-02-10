@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<p-card *ngIf="!getRoute().url.includes('login') && !getRoute().url.includes('register')">
+    <p-tabMenu [model]="items"></p-tabMenu>
+</p-card> 
+<router-outlet></router-outlet>
+<app-messages></app-messages>

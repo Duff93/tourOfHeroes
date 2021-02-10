@@ -1,0 +1,53 @@
+/* Application-wide Styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+h1 {
+    color: rgb(63, 133, 202);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 250%;
+}
+
+h2, h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #919191;
+}
+
+body {
+    margin: 2em;
+    background-color: #f4f4f4;
+}
+
+body, input[type="text"], button {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* everywhere else */
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+.p-card-class {
+    margin: 0.5em;
+}
+
+button.p-button {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(59, 139, 204);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: baseline;
+    margin: 1rem;
+    &:disabled{
+        background-color: #eee;
+        color: #ccc;
+        cursor: auto;
+    }
+    &:enabled:hover{
+        background: rgb(30 108 225 / 92%);
+    }
+}

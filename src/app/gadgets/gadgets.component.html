@@ -1,0 +1,34 @@
+<p-card class="card-table">
+  <h2>My Gadgets</h2>
+  
+  <div class="p-formgroup-inline">
+    <div class="p-field">
+      <label class="p-sr-only">Insert name</label>
+      <input #gadgetName type="text" pInputText class="input-gadget" id="input-name-gadget" placeholder="name" />
+    </div>
+    <div class="p-field">
+      <label class="p-sr-only">Insert bonus</label>
+      <input #gadgetBonus type="text" pInputText class="input-gadget" id="input-bonus-gadget" placeholder="bonus" />
+    </div>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button pButton type="button" label="Add" id="add-gadget-button" class="p-button-text"
+      (click)="add(gadgetName.value, gadgetBonus.value); gadgetName.value=''; gadgetBonus.value=''"></button>
+  </div>
+  
+  <p-table [value]="gadgets">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Bonus</th>
+        <th>Delete</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-gadget>
+      <tr>
+        <td>{{gadget.name}}</td>
+        <td>{{gadget.bonus}}</td>
+        <td><button pButton class="delete" label="Delete" (click)="delete(gadget)"></button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
